@@ -33,7 +33,7 @@
         {% else %}
         <div>
             <div></div>
-            <a href="{% url 'task-update' task.id %}">{{task}}</a>
+            <a href="{% url 'task-detail' task.id %}">{{task}}</a>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         {% endif %}
