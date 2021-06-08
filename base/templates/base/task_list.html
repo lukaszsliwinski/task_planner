@@ -18,7 +18,7 @@
         <input type="text" name="search-area" value="{{search_input}}">
         <input type="submit" value="Search">
     </form>
-    <a href="{% url 'task-create' %}">&#x2b;</a>
+    <a href="{% url 'task-create' %}">o co cho?</a>
 </div>
 
 <div>
@@ -27,13 +27,13 @@
         {% if task.complete %}
         <div>
             <div></div>
-            <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></i> / due to {{task.due_date}}</s></p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         {% else %}
         <div>
             <div></div>
-            <a href="{% url 'task-detail' task.id %}">{{task}}</a>
+            <p><a href="{% url 'task-detail' task.id %}">{{task}}</a> / due to {{task.due_date}}</p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         {% endif %}
