@@ -18,26 +18,79 @@
         <input type="text" name="search-area" value="{{search_input}}">
         <input type="submit" value="Search">
     </form>
-    <a href="{% url 'task-create' %}">o co cho?</a>
+    <a href="{% url 'task-create' %}">Add new task</a>
 </div>
 
 <div>
+    <h3>Po terminie</h3>
     {% for task in tasks %}
+    {% if task.past %}
     <div>
         {% if task.complete %}
         <div>
-            <div></div>
-            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></i> / due to {{task.due_date}}</s></p>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i></p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         {% else %}
         <div>
-            <div></div>
             <p><a href="{% url 'task-detail' task.id %}">{{task}}</a> / due to {{task.due_date}}</p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         {% endif %}
     </div>
+    {% endif %}
+    {% empty %}
+    <h3>No items in list</h3>
+    {% endfor %}
+</div>
+
+<div>
+    <h3>Dzisiejsze</h3>
+    {% for task in tasks %}
+    {% if task.today %}
+    <div>
+        {% if task.complete %}
+        <div>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i></p>
+        </div>
+        <a href="{% url 'task-delete' task.id %}">&#215;</a>
+        {% else %}
+        <div>
+            <p><a href="{% url 'task-detail' task.id %}">{{task}}</a> / due to {{task.due_date}}</p>
+        </div>
+        <a href="{% url 'task-delete' task.id %}">&#215;</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% empty %}
+    <h3>No items in list</h3>
+    {% endfor %}
+</div>
+
+<div>
+    <h3>Nadchodzące</h3>
+    {% for task in tasks %}
+    {% if task.coming %}
+    <div>
+        {% if task.complete %}
+        <div>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i></p>
+        </div>
+        <a href="{% url 'task-delete' task.id %}">&#215;</a>
+        {% else %}
+        <div>
+            <p><a href="{% url 'task-detail' task.id %}">{{task}}</a> / due to
+                {% if task.due_date %}
+                    {{task.due_date}}
+                {% else %}
+                    (no date)
+                {% endif %}
+            </p>
+        </div>
+        <a href="{% url 'task-delete' task.id %}">&#215;</a>
+        {% endif %}
+    </div>
+    {% endif %}
     {% empty %}
     <h3>No items in list</h3>
     {% endfor %}
