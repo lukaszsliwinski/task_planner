@@ -59,6 +59,13 @@ class TaskDetail(LoginRequiredMixin, DetailView):
     context_object_name = 'task'
     fields = '__all__'
 
+    def complete(request, pk):
+        task = Task.objects.get(pk=pk)
+        task.set_complete()
+        return redirect('tasks')
+
+    
+
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
@@ -82,3 +89,4 @@ class DeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = 'task'
     success_url = reverse_lazy('tasks')
+

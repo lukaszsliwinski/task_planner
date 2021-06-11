@@ -33,3 +33,7 @@ class Task(models.Model):
             return date.today() < self.due_date
         except TypeError:
             return self.due_date == None
+
+    def set_complete(self):
+        self.complete = not self.complete
+        self.save()
