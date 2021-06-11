@@ -64,8 +64,6 @@ class TaskDetail(LoginRequiredMixin, DetailView):
         task.set_complete()
         return redirect('tasks')
 
-    
-
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task

@@ -11,7 +11,7 @@
     <div>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">Mark as complete</button>
+            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         <div>
             <p>Zadanie: {{task.title}}</p>
