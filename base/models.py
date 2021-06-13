@@ -1,8 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-import datetime
-
 from datetime import date
 
 class Task(models.Model):
@@ -11,7 +8,7 @@ class Task(models.Model):
     description = models.TextField(null=True, blank=True)
     completed = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateField(default=datetime.date.today, null=True, blank=True)
+    due_date = models.DateField(default=date.today, null=True, blank=True)
     completed_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
@@ -37,5 +34,5 @@ class Task(models.Model):
 
     def mark_as_completed(self):
         self.completed = not self.completed
-        self.completed_date = datetime.date.today()
+        self.completed_date = date.today()
         self.save()

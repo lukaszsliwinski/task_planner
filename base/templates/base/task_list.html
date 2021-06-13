@@ -3,8 +3,8 @@
 
 <div>
     <div>
-        <h1>Hello {{request.user|title}}</h1>
-        <h3>You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h3>
+        <h1>Logged in as {{request.user|title}}</h1>
+        <h3>{{count}} task{{ count|pluralize:"s" }} for today</h3>
     </div>
     {% if request.user.is_authenticated %}
     <a href="{% url 'logout' %}">Logout</a>
@@ -38,8 +38,6 @@
         {% endif %}
     </div>
     {% endif %}
-    {% empty %}
-    <h3>No items in list</h3>
     {% endfor %}
 </div>
 
@@ -60,8 +58,6 @@
         {% endif %}
     </div>
     {% endif %}
-    {% empty %}
-    <h3>No items in list</h3>
     {% endfor %}
 </div>
 
@@ -88,26 +84,22 @@
         {% endif %}
     </div>
     {% endif %}
-    {% empty %}
-    <h3>No items in list</h3>
     {% endfor %}
 </div>
 
 <div>
     <h3>Zakończone</h3>
     {% for task in tasks %}
-        {% if task.completed %}
-        <div>
-            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i> / completed {{task.completed_date|date}}</p>
-        </div>
-        <a href="{% url 'task-delete' task.id %}">&#215;</a>
-        <form method="post" action="{% url 'complete' task.pk %}">
-            {% csrf_token %}
-            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
-        </form>
-        {% endif %}
-    {% empty %}
-    <h3>No items in list</h3>
+    {% if task.completed %}
+    <div>
+        <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i> / completed {{task.completed_date|date}}</p>
+    </div>
+    <a href="{% url 'task-delete' task.id %}">&#215;</a>
+    <form method="post" action="{% url 'complete' task.pk %}">
+        {% csrf_token %}
+        <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+    </form>
+    {% endif %}
     {% endfor %}
 </div>
 
