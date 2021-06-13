@@ -45,8 +45,8 @@ class TaskList(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['tasks'] = context['tasks'].filter(user=self.request.user).order_by('complete', 'due_date')
-        context['count'] = context['tasks'].filter(complete=False).count()
+        context['tasks'] = context['tasks'].filter(user=self.request.user).order_by('completed', 'due_date')
+        context['count'] = context['tasks'].filter(completed=False).count()
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
             context['tasks'] = context['tasks'].filter(title__startswith=search_input)
@@ -61,13 +61,13 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
     def complete(request, pk):
         task = Task.objects.get(pk=pk)
-        task.set_complete()
+        task.mark_as_completed()
         return redirect('tasks')
 
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields = ['title', 'description', 'complete', 'due_date']
+    fields = ['title', 'description', 'due_date']
     success_url = reverse_lazy('tasks')
 
     def form_valid(self, form):
@@ -77,7 +77,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['title', 'description', 'complete', 'due_date']
+    fields = ['title', 'description', 'due_date']
     
     def get_success_url(self):
         pk = self.kwargs['pk']

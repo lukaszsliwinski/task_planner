@@ -26,14 +26,14 @@
     {% for task in tasks %}
     {% if task.past %}
     <div>
-        {% if task.complete %}
+        {% if task.completed %}
         <div>
-            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i></p>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i> / completed {{task.completed_date|date}}</p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         {% else %}
         <div>
@@ -42,7 +42,7 @@
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         {% endif %}
     </div>
@@ -57,14 +57,14 @@
     {% for task in tasks %}
     {% if task.today %}
     <div>
-        {% if task.complete %}
+        {% if task.completed %}
         <div>
-            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i></p>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i> / completed {{task.completed_date|date}}</p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         {% else %}
         <div>
@@ -73,7 +73,7 @@
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         {% endif %}
     </div>
@@ -88,14 +88,14 @@
     {% for task in tasks %}
     {% if task.coming %}
     <div>
-        {% if task.complete %}
+        {% if task.completed %}
         <div>
-            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i></p>
+            <p><i><s><a href="{% url 'task-detail' task.id %}">{{task}}</a></s></i> / completed {{task.completed_date|date}}</p>
         </div>
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         {% else %}
         <div>
@@ -110,7 +110,7 @@
         <a href="{% url 'task-delete' task.id %}">&#215;</a>
         <form method="post" action="{% url 'complete' task.pk %}">
             {% csrf_token %}
-            <button type="submit">{% if task.complete %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+            <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
         </form>
         {% endif %}
     </div>

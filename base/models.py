@@ -9,9 +9,10 @@ class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    complete = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     due_date = models.DateField(default=datetime.date.today, null=True, blank=True)
+    completed_date = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -34,6 +35,7 @@ class Task(models.Model):
         except TypeError:
             return self.due_date == None
 
-    def set_complete(self):
-        self.complete = not self.complete
+    def mark_as_completed(self):
+        self.completed = not self.completed
+        self.completed_date = datetime.date.today()
         self.save()
