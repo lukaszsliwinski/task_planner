@@ -21,7 +21,7 @@
     <a href="{% url 'task-create' %}">Add new task</a>
 </div>
 
-<div>
+<div class="list">
     <h3>Po terminie</h3>
     {% for task in tasks %}
     {% if task.past %}
@@ -41,7 +41,7 @@
     {% endfor %}
 </div>
 
-<div>
+<div class="list">
     <h3>Dzisiejsze</h3>
     {% for task in tasks %}
     {% if task.today %}
@@ -61,7 +61,7 @@
     {% endfor %}
 </div>
 
-<div>
+<div class="list">
     <h3>Nadchodzące</h3>
     {% for task in tasks %}
     {% if task.coming %}
@@ -87,7 +87,7 @@
     {% endfor %}
 </div>
 
-<div>
+<div class="list">
     <h3>Zakończone</h3>
     {% for task in tasks %}
     {% if task.completed %}
