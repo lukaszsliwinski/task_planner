@@ -1,8 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root {
+    --header-background: linear-gradient(45deg, rgb(29, 206, 29) 0%, rgb(11, 180, 11) 40%, rgb(3, 112, 3) 100%); 
+}
+
 
 body {
-    background-color: #d3d3d3;
+    background-color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
+    padding-top: 100px;
+}
+
+h1, h3 {
+    font-family: 'Rubik', sans-serif;
+
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background: var(--header-background);
+}
+
+.header-right-side {
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    
+
+.header-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
 }
 
 .list {
