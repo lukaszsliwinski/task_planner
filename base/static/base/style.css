@@ -55,13 +55,33 @@ h3 {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1400px;
     margin: auto;
     background-color: white;
     box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
 }
 
-.list {
+.tasklist-wrapper {
     display: inline-block;
     vertical-align: top;
+}
+
+
+
+.task-name {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+  }
+
+.task-link {
+    margin-right: auto;
+}
+
+.complete-form {
+
+}
+
+.delete-link {
+
 }
