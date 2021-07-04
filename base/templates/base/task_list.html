@@ -33,11 +33,11 @@
             <div class="complete-form">
                 <form method="post" action="{% url 'complete' task.pk %}">
                     {% csrf_token %}
-                    <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+                    <input class="complete-btn" type="submit" value="&#10003;" />
                 </form>
             </div>
             <div class="delete-link">
-                <a href="{% url 'task-delete' task.id %}">&#215;</a>
+                <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
             </div>
         </div>
         <p>due to {{task.due_date}}</p>
@@ -60,11 +60,11 @@
             <div class="complete-form">
                 <form method="post" action="{% url 'complete' task.pk %}">
                     {% csrf_token %}
-                    <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+                    <input class="complete-btn" type="submit" value="&#10003;" />
                 </form>
             </div>
             <div class="delete-link">
-                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+                <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
             </div>
         </div>
         <p>due to {{task.due_date}}</p>
@@ -87,11 +87,11 @@
             <div class="complete-form">
                 <form method="post" action="{% url 'complete' task.pk %}">
                     {% csrf_token %}
-                    <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+                    <input class="complete-btn" type="submit" value="&#10003;" />
                 </form>
             </div>
             <div class="delete-link">
-                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+                <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
             </div>
         </div>
         <p>due to
@@ -119,11 +119,11 @@
             <div class="complete-form">
                 <form method="post" action="{% url 'complete' task.pk %}">
                     {% csrf_token %}
-                    <button type="submit">{% if task.completed %}Mark as uncompleted{% else %}Mark as completed{% endif %}</button>
+                    <input class="uncomplete-btn" type="submit" value="&#10003;" />
                 </form>
             </div>
             <div class="delete-link">
-                <a href="{% url 'task-delete' task.id %}">&#215;</a>
+                <a class="delete-btn" href="{% url 'task-delete' task.id %}">&#215;</a>
             </div>
         </div>
         <p>completed {{task.completed_date|date}}</p>
