@@ -61,31 +61,40 @@ h3 {
     box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
 }
 
+.tasklist-header {
+    text-align: center;
+}
+
 .tasklist-wrapper {
     display: inline-block;
     vertical-align: top;
     width: 345px;
 }
 
+.task-wrapper {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(226, 226, 226);
+    margin: 5px;
+    border-radius: 10px;
+}
 
 
 .task-name {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
+    font-size: 18px;
   }
 
 .task-link {
     margin-right: auto;
 }
 
-.complete-form {
-
-}
-
-.delete-link {
-    display: flex;
-
+.task-link a {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
 }
 
 
@@ -150,4 +159,8 @@ h3 {
 .delete-btn:hover {
     background-color: white;
     color: black;
+}
+
+.deadline {
+    font-size: 12px;
 }
