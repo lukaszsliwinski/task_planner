@@ -1,13 +1,25 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<div>
-    <h3>Task Form</h3>
+<div class="container-tight">
+
+<div class="header-bar">
+    <div class="header-left-side">
+        <h1>New/edit task</h1>
+        <div>
+            <a class="back" href="{% url 'tasks' %}">&#8592; Back</a>
+        </div>
+    </div>   
+</div>
+
+<div class="card-body">
     <form method="POST" action="">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="Submit">
+        <input class="form-button" type="submit" value="Submit">
     </form>
+</div>
+
 </div>
 
 {% endblock content %}
