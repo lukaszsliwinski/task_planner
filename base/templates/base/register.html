@@ -7,7 +7,10 @@
     <h1>Register</h1>
 </div>
 
-<div class="card-body">
+<div class="card-body-login">
+    <p class="register-login-footer">
+        Already have an account?<a class="form-button" href="{% url 'login' %}">Login</a>
+    </p>
     <form method="POST">
         {% csrf_token %}
 
@@ -21,7 +24,6 @@
         {{form.password2}}
 
         <input class="form-button" type="submit" value="Register">
-        <p class="register-login-footer">Already have an account? <a class="form-button" href="{% url 'login' %}">Login</a></p>
     </form>
     
 </div>

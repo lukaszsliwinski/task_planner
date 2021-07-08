@@ -7,7 +7,7 @@
     <div class="header-left-side">
         <h1>New/edit task</h1>
         <div>
-            <a class="back" href="{% url 'tasks' %}">&#8592; Back</a>
+            <a class="back" href="{% url 'tasks' %}">&#8592; Back to list</a>
         </div>
     </div>   
 </div>
@@ -15,7 +15,16 @@
 <div class="card-body">
     <form method="POST" action="">
         {% csrf_token %}
-        {{form.as_p}}
+
+        <label>{{form.title.label}}</label>
+        {{form.title}}
+
+        <label>{{form.due_date.label}}</label>
+        <div class="date-input">{{form.due_date}}</div>
+        
+        <label>{{form.description.label}}</label>
+        {{form.description}}
+
         <input class="form-button" type="submit" value="Submit">
     </form>
 </div>

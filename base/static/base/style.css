@@ -32,7 +32,11 @@ textarea,
     border: 1px solid green;
     border-radius: 5px;
     padding: 10px;
-    width: 90%;
+    width: 95%;
+}
+
+.description-field {
+    min-height: 150px;
 }
 
 .search-area {
@@ -42,6 +46,14 @@ textarea,
 label {
     padding-top: 10px !important;
     display: block;
+}
+
+.date-field {
+    width: fit-content;
+}
+
+.date-input {
+    width: 75px;
 }
 
 .form-button {
@@ -56,6 +68,11 @@ label {
     margin-top: 10px;
 }
 
+.form-button:hover {
+    background-color: white;
+    color: black;
+}
+
 .search-button {
     border: none;
     background-color: white;
@@ -66,6 +83,11 @@ label {
     cursor: pointer;
     text-decoration: none;
 
+}
+
+.search-button:hover {
+    background-color: transparent;
+    color: white;
 }
 
 .header-bar {
@@ -94,6 +116,7 @@ label {
 
 .header-bar a {
     color: white;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -111,7 +134,7 @@ label {
 }
 
 .container-tight {
-    width: 800px;
+    width: 550px;
     margin: auto;
     background-color: white;
     box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
@@ -227,21 +250,29 @@ label {
 
 
 .card-body {
-    width: 800px;
     height: auto;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+    position: relative;
+}
+
+.card-body-login {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
     position: relative;
 }
 
 .detail-block {
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .detail-options {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
+    padding-top: 10px;
 }
 
 .detail-options .complete-btn {
@@ -256,7 +287,6 @@ label {
     font-size: 25px;
     border-radius: 17px;
     padding-top: 3px;
-    margin-right: 57px;
 }
 
 .detail-options .form-button {

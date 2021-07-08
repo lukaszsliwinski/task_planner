@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'pl-pl'
+LANGUAGE_CODE = 'en-en'
 
 TIME_ZONE = 'Europe/Warsaw'
 
@@ -116,6 +116,9 @@ USE_TZ = True
 
 LOGIN_URL = 'login'
 
+DATE_FORMAT = "Y-m-d"
+
+USE_L10N = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

@@ -7,7 +7,7 @@
     <div class="header-left-side">
         <h1>Task detail</h1>
         <div>
-            <a class="back" href="{% url 'tasks' %}">&#8592; Back</a>
+            <a class="back" href="{% url 'tasks' %}">&#8592; Back to list</a>
             
         </div>
     </div>   
@@ -21,12 +21,12 @@
             <p class="text-field">{{task.title}}</p>
         </div>
         <div class="detail-block">
-            <p>Description:</p>
-            <p class="text-field">{{task.description}}</p>
+            <p>Due date:</p>
+            <p class="text-field date-field">{{task.due_date}}</p>
         </div>
         <div class="detail-block">
-            <p>Due date:</p>
-            <p class="text-field">{{task.due_date}}</p>
+            <p>Description:</p>
+            <p class="text-field description-field">{{task.description}}</p>
         </div>
         <div class="detail-options">
             <a class="form-button" href="{% url 'task-update' task.id %}">Edit</a>
