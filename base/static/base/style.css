@@ -281,6 +281,12 @@ label {
     border-radius: 17px;
 }
 
+.detail-options .uncomplete-btn {
+    height: 34px;
+    width: 34px;
+    border-radius: 17px;
+}
+
 .detail-options .delete-btn {
     height: 31px;
     width: 34px;
