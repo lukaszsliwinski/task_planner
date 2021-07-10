@@ -9,7 +9,7 @@
 
 <div class="card-body-login">
     <p class="register-login-footer">
-        Already have an account?<a class="form-button" href="{% url 'login' %}">Login</a>
+        Already have an account? <a class="form-button" href="{% url 'login' %}">Login</a>
     </p>
     <form method="POST">
         {% csrf_token %}
@@ -22,8 +22,17 @@
 
         <label>{{form.password2.label}}</label>
         {{form.password2}}
-
+        
         <input class="form-button" type="submit" value="Register">
+
+        <div class="register-instruction">
+            <span>Username required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+            <span>Password can’t be too similar to your other personal information.</span>
+            <span>Password must contain at least 8 characters.</span>
+            <span>Password can’t be a commonly used password.</span>
+            <span>Password can’t be entirely numeric.</span>
+            <span>Repeat password for verification.</span>
+        </div>
     </form>
     
 </div>

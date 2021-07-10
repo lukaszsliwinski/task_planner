@@ -308,3 +308,15 @@ label {
     padding-top: 2px;
     padding-bottom: 2px;
 }
+
+.register-instruction span {
+    display: block;
+    font-size: 12px;
+    padding: 3px 0 3px 0;
+
+}
+
+.register-instruction {
+    margin-top: 20px;
+    border-top: 1px solid rgb(3, 112, 3);
+}
