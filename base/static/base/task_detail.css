@@ -1,0 +1,38 @@
+.card-body {
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    position: relative;
+}
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding-top: 10px;
+}
+
+footer .complete-btn {
+    height: 34px;
+    width: 34px;
+    border-radius: 17px;
+}
+
+footer .uncomplete-btn {
+    height: 34px;
+    width: 34px;
+    border-radius: 17px;
+}
+
+footer .delete-btn {
+    height: 31px;
+    width: 34px;
+    font-size: 25px;
+    border-radius: 17px;
+    padding-top: 3px;
+}
+
+footer .btn {
+    margin-right: auto;
+    margin-top: 0;
+}

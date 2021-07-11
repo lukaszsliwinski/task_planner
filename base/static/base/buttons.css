@@ -1,0 +1,96 @@
+.btn {
+    border: none;
+    background-color: var(--green1);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.search-btn {
+    border: none;
+    background-color: white;
+    color: green;
+    padding: 10px;
+    margin-left: 2px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.search-btn:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.complete-btn {
+    background-color: var(--green1);
+    color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.complete-btn:hover {
+    background-color:white;
+    color: black;
+}
+
+.uncomplete-btn {
+    background-color: red;
+    color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+}
+
+.uncomplete-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.delete-btn {
+    display: block;
+    background-color: red;
+    height: 19px;
+    width: 20px;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 1px;
+    margin: 0 5px 0 5px;
+}
+
+.delete-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.account-btn {
+    border: none;
+    background-color: var(--green1);
+    color: white;
+    padding: 2px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
