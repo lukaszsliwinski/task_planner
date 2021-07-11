@@ -2,8 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 :root {
-    --header-background: linear-gradient(45deg, rgb(29, 206, 29) 0%, rgb(11, 180, 11) 40%, rgb(3, 112, 3) 100%); 
+    --green1: rgb(36, 221, 36);
+    --green2: rgb(11, 180, 11);
+    --header-background-color: linear-gradient(45deg, var(--green1) 0%, var(--green2) 50%, green 100%); 
 }
+
+
+
+/* style */
+
 
 
 body {
@@ -14,7 +21,6 @@ body {
 
 h1, h3 {
     font-family: 'Rubik', sans-serif;
-
 }
 
 h1 {
@@ -23,7 +29,77 @@ h1 {
 
 h3 {
     font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: underline;
 }
+
+main {
+    border-radius: 5px 5px 0 0;
+    margin: auto;
+    background-color: white;
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+}
+
+label {
+    padding-top: 10px;
+    display: block;
+}
+
+.main-container {
+    width: 1400px;
+    min-height: 620px;
+}
+
+.card-container {
+    width: 550px;
+}
+
+
+
+/* header */
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background: var(--header-background-color);
+}
+
+header section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header nav {
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header a {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.search-bar {
+    display: inline-flex;
+}
+
+
+
+/* text fields */ 
+
 
 input[type=text],
 input[type=password],
@@ -39,15 +115,6 @@ textarea,
     min-height: 150px;
 }
 
-.search-area {
-    width: 50% !important;
-}
-
-label {
-    padding-top: 10px !important;
-    display: block;
-}
-
 .date-field {
     width: fit-content;
 }
@@ -56,9 +123,13 @@ label {
     width: 75px;
 }
 
-.form-button {
+
+/* buttons */
+
+
+.btn {
     border: none;
-    background-color: rgb(29, 206, 29);
+    background-color: var(--green1);
     color: white;
     padding: 10px;
     font-size: 14px;
@@ -68,16 +139,17 @@ label {
     margin-top: 10px;
 }
 
-.form-button:hover {
+.btn:hover {
     background-color: white;
     color: black;
 }
 
-.search-button {
+.search-btn {
     border: none;
     background-color: white;
-    color: rgb(3, 112, 3);
+    color: green;
     padding: 10px;
+    margin-left: 2px;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
@@ -85,104 +157,13 @@ label {
 
 }
 
-.search-button:hover {
+.search-btn:hover {
     background-color: transparent;
     color: white;
 }
 
-.header-bar {
-    display: flex;
-    justify-content: space-between;
-    height: 70px;
-    color: white;
-    padding: 10px;
-    border-radius: 5px 5px 0 0;
-    background: var(--header-background);
-}
-
-.header-right-side {
-    display: flex;
-    text-align: right;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.header-left-side {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-    
-
-.header-bar a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.back {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.container {
-    width: 1400px;
-    min-height: 620px;
-    margin: auto;
-    background-color: white;
-    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-}
-
-.container-tight {
-    width: 550px;
-    margin: auto;
-    background-color: white;
-    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-}
-
-
-.tasklist-header {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    text-decoration: underline;
-}
-
-.tasklist-wrapper {
-    display: inline-block;
-    vertical-align: top;
-    width: 345px;
-}
-
-.task-wrapper {
-    padding: 10px;
-    background-color: white;
-    border: 1px solid rgb(226, 226, 226);
-    margin: 5px;
-    border-radius: 10px;
-}
-
-
-.task-name {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    font-size: 18px;
-  }
-
-.task-link {
-    margin-right: auto;
-}
-
-.task-link a {
-    text-decoration: none;
-    color: black;
-    font-size: 22px;
-}
-
-
 .complete-btn {
-    background-color: rgb(29, 206, 29);
+    background-color: var(--green1);
     color: white;
     height: 20px;
     width: 20px;
@@ -213,7 +194,6 @@ label {
     color: black;
 }
 
-
 .delete-btn {
     display: block;
     background-color: red;
@@ -227,26 +207,59 @@ label {
     margin: 0 5px 0 5px;
 }
 
-.tooltip {
-    visibility: hidden;
-    font-size: 10px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 2px 5px;
-    position: absolute;
-    z-index: 1;
-}
-
 .delete-btn:hover {
     background-color: white;
     color: black;
 }
 
-.deadline {
+.account-btn {
+    border: none;
+    background-color: var(--green1);
+    color: white;
+    padding: 2px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* tasklist */
+
+time {
     font-size: 12px;
 }
+
+.tasklist {
+    display: inline-block;
+    vertical-align: top;
+    width: 345px;
+}
+
+.task {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgb(226, 226, 226);
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.task-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    font-size: 18px;
+}
+
+.task-link {
+    margin-right: auto;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+
+/* task details, edit, delete */
 
 
 .card-body {
@@ -256,38 +269,26 @@ label {
     position: relative;
 }
 
-.card-body-login {
-    width: 300px;
-    height: auto;
-    margin: 0 auto;
-    padding: 0 20px 20px 20px;
-    position: relative;
-}
-
-.detail-block {
-    padding-top: 10px;
-}
-
-.detail-options {
+footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
     padding-top: 10px;
 }
 
-.detail-options .complete-btn {
+footer .complete-btn {
     height: 34px;
     width: 34px;
     border-radius: 17px;
 }
 
-.detail-options .uncomplete-btn {
+footer .uncomplete-btn {
     height: 34px;
     width: 34px;
     border-radius: 17px;
 }
 
-.detail-options .delete-btn {
+footer .delete-btn {
     height: 31px;
     width: 34px;
     font-size: 25px;
@@ -295,28 +296,32 @@ label {
     padding-top: 3px;
 }
 
-.detail-options .form-button {
+footer .btn {
     margin-right: auto;
     margin-top: 0;
 }
 
-.register-login-footer {
-    margin-top: 10px;
+
+
+/* account */
+
+
+.account-body {
+    width: 300px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    position: relative;
 }
 
-.register-login-footer .form-button {
-    padding-top: 2px;
-    padding-bottom: 2px;
+aside {
+    margin-top: 20px;
+    border-top: 1px solid green;
 }
 
-.register-instruction span {
+aside span {
     display: block;
     font-size: 12px;
     padding: 3px 0 3px 0;
 
-}
-
-.register-instruction {
-    margin-top: 20px;
-    border-top: 1px solid rgb(3, 112, 3);
 }

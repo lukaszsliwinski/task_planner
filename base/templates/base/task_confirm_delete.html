@@ -1,26 +1,23 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<div class="container-tight">
+<main class="card-container">
 
-<div class="header-bar">
-    <div class="header-left-side">
+<header>
+    <section>
         <h1>Detele task</h1>
-        <div>
-            <a class="back" href="{% url 'tasks' %}">&#8592; Back</a>
-            
-        </div>
-    </div>   
-</div>
+        <a href="{% url 'tasks' %}">&#8592; Back</a>
+    </section>   
+</header>
 
-<div class="card-body">
+<section class="card-body">
     <form method="POST">
         {% csrf_token %}
-        <p>Are you sure you want to delete this task? "{{task}}"</p>
-        <input class="form-button" type="submit" value="Delete" />
+        <label>Are you sure you want to delete this task? "{{task}}"</label>
+        <input class="btn" type="submit" value="Delete" />
     </form>
-</div>
+</section>
 
-</div>
+</main>
 
 {% endblock content %}

@@ -1,49 +1,43 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<div class="container-tight">
+<main class="card-container">
 
-<div class="header-bar">
-    <div class="header-left-side">
+<header>
+    <section>
         <h1>Task detail</h1>
-        <div>
-            <a class="back" href="{% url 'tasks' %}">&#8592; Back to list</a>
-            
-        </div>
-    </div>   
-</div>
+        <a href="{% url 'tasks' %}">&#8592; Back to list</a>
+    </section>   
+</header>
 
 
-<div class="card-body">
-        
-        <div class="detail-block">
-            <p>Title:</p>
-            <p class="text-field">{{task.title}}</p>
-        </div>
-        <div class="detail-block">
-            <p>Due date:</p>
-            <p class="text-field date-field">{{task.due_date}}</p>
-        </div>
-        <div class="detail-block">
-            <p>Description:</p>
-            <p class="text-field description-field">{{task.description}}</p>
-        </div>
-        <div class="detail-options">
-            <a class="form-button" href="{% url 'task-update' task.id %}">Edit</a>
-            <form method="post" action="{% url 'complete' task.pk %}">
-                {% csrf_token %}
+<section class="card-body">
 
-                {% if task.completed %}
-                <input class="uncomplete-btn" type="submit" value="&#10003;" />
-                {% else %}
-                <input class="complete-btn" type="submit" value="&#10003;" />
-                {% endif %}
+    <label>Title:</label>
+    <div class="text-field">{{task.title}}</div>
 
-            </form>
-            <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-        </div>
-</div>
+    <label>Due date:</label>
+    <div class="text-field date-field">{{task.due_date}}</div>
 
-</div>
+    <label>Description:</label>
+    <div class="text-field description-field">{{task.description}}</div>
+
+    <footer>
+        <a class="btn" href="{% url 'task-update' task.id %}">Edit</a>
+        <form method="post" action="{% url 'complete' task.pk %}">
+            {% csrf_token %}
+
+            {% if task.completed %}
+            <input class="uncomplete-btn" type="submit" value="&#10003;" />
+            {% else %}
+            <input class="complete-btn" type="submit" value="&#10003;" />
+            {% endif %}
+
+        </form>
+        <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+    </footer>
+</section>
+
+</main>
 
 {% endblock content %}
