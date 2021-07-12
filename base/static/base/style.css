@@ -14,9 +14,9 @@
 /* HTML tags */
 
 body {
+    padding-top: 50px;
     background-color: #f0f0f0;
     font-family: 'Roboto', sans-serif;
-    padding-top: 50px;
 }
 
 h1, h3 {
@@ -28,23 +28,22 @@ h1 {
 }
 
 h3 {
+    padding: 10px 0 5px 0;
     font-size: 20px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 5px;
     text-decoration: underline;
 }
 
 main {
-    border-radius: 5px 5px 0 0;
     margin: auto;
-    background-color: white;
     box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    border-radius: 5px 5px 0 0;
+    background-color: white;
 }
 
 label {
-    padding-top: 10px;
     display: block;
+    padding-top: 10px;
 }
 
 

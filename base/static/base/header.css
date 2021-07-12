@@ -1,33 +1,33 @@
-/* Styles for header */
+/* Styles for header tags */
 
 
 header {
-    display: flex;
     justify-content: space-between;
-    height: 85px;
-    color: white;
-    padding: 10px;
+    display: flex;
     border-radius: 5px 5px 0 0;
+    height: 85px;
+    padding: 10px;
     background: var(--header-background-color);
+    color: white;
 }
 
 header section {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
+    display: flex;
 }
 
 header nav {
+    justify-content: space-between;
+    flex-direction: column;
     display: flex;
     text-align: right;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 header a {
-    color: white;
     font-size: 15px;
     font-weight: bold;
+    color: white;
     text-decoration: none;
 }
 

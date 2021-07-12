@@ -1,5 +1,8 @@
 /* Styles for task detail, edit and delete cards */
 
+
+/* Body and footer dimensions */
+
 .card-body {
     height: auto;
     margin: 0 auto;
@@ -13,6 +16,9 @@ footer {
     justify-content: flex-end;
     padding-top: 10px;
 }
+
+
+/* Styles for bigger buttons to mark as complete/uncomplete and delete task */
 
 footer .complete-btn {
     height: 34px;

@@ -1,18 +1,23 @@
 /* Styles for buttons */
 
+/* 
+Styles for bigger buttons to mark as complete/uncomplete
+and delete task are in task_detail.css file
+*/
 
-/* Buttons on page (submit, edit, delete) */
+
+/* Buttons on page (submit, edit, delete, login, register) */
 
 .btn {
-    border: none;
-    background-color: var(--green1);
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
     margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--green1);
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    text-decoration: none; 
 }
 
 .btn:hover {
@@ -24,15 +29,14 @@
 /* Buttons in header (search, new task, logout, back) */
 
 .header-btn {
-    border: none;
-    background-color: white;
-    color: green;
-    padding: 10px;
-    width: fit-content;
     margin-left: 4px;
-    font-size: 14px;
+    border: none;
     border-radius: 5px;
-    cursor: pointer;
+    width: fit-content;
+    padding: 10px;
+    background-color: white;
+    font-size: 14px;
+    color: green;
     text-decoration: none;
 }
 
@@ -45,14 +49,14 @@
 /* Buttons to mark task as complete/uncomplete */
 
 .complete-btn {
-    background-color: var(--green1);
-    color: white;
+    border: none;
+    border-radius: 10px;
     height: 20px;
     width: 20px;
-    border-radius: 10px;
-    text-decoration: none;
+    background-color: var(--green1);
     cursor: pointer;
-    border: none;
+    color: white;
+    text-decoration: none;
 }
 
 .complete-btn:hover {
@@ -61,14 +65,14 @@
 }
 
 .uncomplete-btn {
-    background-color: red;
-    color: white;
+    border: none;
+    border-radius: 10px;
     height: 20px;
     width: 20px;
-    border-radius: 10px;
-    text-decoration: none;
+    background-color: red;
     cursor: pointer;
-    border: none;
+    text-decoration: none;
+    color: white;
 }
 
 .uncomplete-btn:hover {
@@ -80,16 +84,15 @@
 /* Buttons to delete task */
 
 .delete-btn {
-    display: block;
-    background-color: red;
+    margin: 0 5px 0 5px;
+    border-radius: 10px;
     height: 19px;
     width: 20px;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    text-align: center;
     padding-top: 1px;
-    margin: 0 5px 0 5px;
+    background-color: red;
+    text-align: center;
+    color: white;
+    text-decoration: none;   
 }
 
 .delete-btn:hover {
@@ -101,15 +104,14 @@
 /* Buttons to change login/register page */
 
 .account-btn {
-    border: none;
-    background-color: var(--green1);
-    color: white;
-    padding: 2px 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
     margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 10px;
+    background-color: var(--green1);
+    font-size: 14px;
+    color: white;    
+    text-decoration: none;
 }
 
 .account-btn:hover {
