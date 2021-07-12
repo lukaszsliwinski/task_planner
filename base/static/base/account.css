@@ -1,10 +1,18 @@
+/* Styles for login and register pages */
+
+
+/* Body */
+
 .account-body {
+    position: relative;
+    margin: 0 auto;
     width: 300px;
     height: auto;
-    margin: 0 auto;
     padding: 0 20px 20px 20px;
-    position: relative;
 }
+
+
+/* Username and password instructions on the bottom of site */
 
 aside {
     margin-top: 20px;
@@ -13,7 +21,6 @@ aside {
 
 aside span {
     display: block;
-    font-size: 12px;
     padding: 3px 0 3px 0;
-
+    font-size: 12px;
 }

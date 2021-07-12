@@ -1,3 +1,8 @@
+/* Styles for buttons */
+
+
+/* Buttons on page (submit, edit, delete) */
+
 .btn {
     border: none;
     background-color: var(--green1);
@@ -14,6 +19,9 @@
     background-color: white;
     color: black;
 }
+
+
+/* Buttons in header (search, new task, logout, back) */
 
 .header-btn {
     border: none;
@@ -32,6 +40,9 @@
     background-color: transparent;
     color: white;
 }
+
+
+/* Buttons to mark task as complete/uncomplete */
 
 .complete-btn {
     background-color: var(--green1);
@@ -65,6 +76,9 @@
     color: black;
 }
 
+
+/* Buttons to delete task */
+
 .delete-btn {
     display: block;
     background-color: red;
@@ -83,6 +97,9 @@
     color: black;
 }
 
+
+/* Buttons to change login/register page */
+
 .account-btn {
     border: none;
     background-color: var(--green1);
@@ -93,4 +110,9 @@
     cursor: pointer;
     text-decoration: none;
     margin-top: 10px;
+}
+
+.account-btn:hover {
+    background-color: white;
+    color: black;
 }

@@ -8,7 +8,7 @@
 </header>
 
 <section class="account-body">
-    <label>Already have an account? <a class="btn account-btn" href="{% url 'login' %}">Login</a></label>
+    <label>Already have an account? <a class="account-btn" href="{% url 'login' %}">Login</a></label>
     <form method="POST">
         {% csrf_token %}
 
