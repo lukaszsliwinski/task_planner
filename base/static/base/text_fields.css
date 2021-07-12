@@ -19,3 +19,7 @@ textarea,
 .date-input {
     width: 75px;
 }
+
+.search-field {
+    border: none !important;
+}

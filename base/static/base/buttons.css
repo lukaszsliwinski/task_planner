@@ -15,20 +15,20 @@
     color: black;
 }
 
-.search-btn {
+.header-btn {
     border: none;
     background-color: white;
     color: green;
     padding: 10px;
-    margin-left: 2px;
+    width: fit-content;
+    margin-left: 4px;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-
 }
 
-.search-btn:hover {
+.header-btn:hover {
     background-color: transparent;
     color: white;
 }

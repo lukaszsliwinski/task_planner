@@ -1,7 +1,7 @@
 header {
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 85px;
     color: white;
     padding: 10px;
     border-radius: 5px 5px 0 0;
@@ -28,6 +28,12 @@ header a {
     text-decoration: none;
 }
 
-.search-bar {
+header p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.header-inline {
     display: inline-flex;
+    margin-left: auto;
 }

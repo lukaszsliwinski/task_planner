@@ -6,14 +6,17 @@
 <header>
     <section>
         <h1>{{count}} task{{ count|pluralize:"s" }} for today</h1>
-        <form class="search-bar" method="GET">
-            <input type="text" name="search-area" value="{{search_input}}">
-            <input class="search-btn" type="submit" value="Search">
+        <form class="header-inline" method="GET">
+            <input class="search-field" type="text" name="search-area" value="{{search_input}}">
+            <input class="header-btn" type="submit" value="Search">
         </form>
     </section>
     <nav>
-        <a href="{% url 'logout' %}">Logout ({{request.user|title}})</a>
-        <a href="{% url 'task-create' %}">&#43; task</a>
+        <p>Logged in as {{ request.user|title }}</p>
+        <div class="header-inline">
+            <a class="header-btn" href="{% url 'task-create' %}">New task</a>
+            <a class="header-btn" href="{% url 'logout' %}">Logout</a>
+        </div>
     </nav>
 </header>
 
