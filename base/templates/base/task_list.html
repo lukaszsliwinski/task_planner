@@ -3,110 +3,110 @@
 
 <main class="main-container">
 
-<header>
-    <section>
-        <h1>{{count}} task{{ count|pluralize:"s" }} for today</h1>
-        <form class="header-inline" method="GET">
-            <input class="search-field" type="text" name="search-area" value="{{search_input}}">
-            <input class="header-btn" type="submit" value="Search">
-        </form>
-    </section>
-    <nav>
-        <p>Logged in as {{ request.user|title }}</p>
-        <div class="header-inline">
-            <a class="header-btn" href="{% url 'task-create' %}">New task</a>
-            <a class="header-btn" href="{% url 'logout' %}">Logout</a>
-        </div>
-    </nav>
-</header>
-
-<ul class="tasklist">
-    <h3>Delayed</h3>
-    {% for task in tasks %}
-    {% if task.past %}
-    {% if task.completed == False %}
-    <li class="task">
-        <section class="task-wrapper">
-            <a class="task-link" href="{% url 'task-detail' task.id %}">{{task}}</a>
-            <form method="post" action="{% url 'complete' task.pk %}">
-                {% csrf_token %}
-                <input class="complete-btn" type="submit" value="&#10003;" />
+    <header>
+        <section>
+            <h1>{{count}} task{{ count|pluralize:"s" }} for today</h1>
+            <form class="header-inline" method="GET">
+                <input class="search-field" type="text" name="search-area" value="{{search_input}}">
+                <input class="header-btn" type="submit" value="Search">
             </form>
-            <a class="delete-btn" href="{% url 'task-delete' task.id %}">&#215;</a>
         </section>
-        <time>due to {{task.due_date}}</time>
-    </li>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</ul>
+        <nav>
+            <p>Logged in as {{ request.user|title }}</p>
+            <div class="header-inline">
+                <a class="header-btn" href="{% url 'task-create' %}">New task</a>
+                <a class="header-btn" href="{% url 'logout' %}">Logout</a>
+            </div>
+        </nav>
+    </header>
 
-<ul class="tasklist">
-    <h3>Today's</h3>
-    {% for task in tasks %}
-    {% if task.today %}
-    {% if task.completed == False %}
-    <li class="task">
-        <section class="task-wrapper">
-            <a class="task-link" href="{% url 'task-detail' task.id %}">{{task}}</a>
-            <form method="post" action="{% url 'complete' task.pk %}">
-                {% csrf_token %}
-                <input class="complete-btn" type="submit" value="&#10003;" />
-            </form>
-            <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-        </section>
-        <time>due to {{task.due_date}}</time>
-    </li>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</ul>
+    <ul class="tasklist">
+        <h3>Delayed</h3>
+        {% for task in tasks %}
+        {% if task.past %}
+        {% if task.completed == False %}
+        <li class="task">
+            <section class="task-wrapper">
+                <a class="task-link" href="{% url 'task-detail' task.id %}">{{task}}</a>
+                <form method="post" action="{% url 'complete' task.pk %}">
+                    {% csrf_token %}
+                    <input class="complete-btn" type="submit" value="&#10003;" />
+                </form>
+                <a class="delete-btn" href="{% url 'task-delete' task.id %}">&#215;</a>
+            </section>
+            <time>due to {{task.due_date}}</time>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
 
-<ul class="tasklist">
-    <h3>Coming soon</h3>
-    {% for task in tasks %}
-    {% if task.coming %}
-    {% if task.completed == False %}
-    <li class="task">
-        <section class="task-wrapper">
-            <a class="task-link" href="{% url 'task-detail' task.id %}">{{task}}</a>
-            <form method="post" action="{% url 'complete' task.pk %}">
-                {% csrf_token %}
-                <input class="complete-btn" type="submit" value="&#10003;" />
-            </form>
-            <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-        </section>
-        <time>
-            {% if task.due_date %}
-                due to {{task.due_date}}
-            {% else %}
-                (no date)
-            {% endif %}
-        </time>
-    </li>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</ul>
+    <ul class="tasklist">
+        <h3>Today's</h3>
+        {% for task in tasks %}
+        {% if task.today %}
+        {% if task.completed == False %}
+        <li class="task">
+            <section class="task-wrapper">
+                <a class="task-link" href="{% url 'task-detail' task.id %}">{{task}}</a>
+                <form method="post" action="{% url 'complete' task.pk %}">
+                    {% csrf_token %}
+                    <input class="complete-btn" type="submit" value="&#10003;" />
+                </form>
+                <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+            </section>
+            <time>due to {{task.due_date}}</time>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
 
-<ul class="tasklist">
-    <h3>Completed</h3>
-    {% for task in tasks %}
-    {% if task.completed %}
-    <li class="task">
-        <section class="task-wrapper">
-            <a class="task-link" href="{% url 'task-detail' task.id %}"><s>{{task}}</s></a>
-            <form method="post" action="{% url 'complete' task.pk %}">
-                {% csrf_token %}
-                <input class="uncomplete-btn" type="submit" value="&#10003;" />
-            </form>
-            <a class="delete-btn" href="{% url 'task-delete' task.id %}">&#215;</a>
-        </section>
-        <time>completed {{task.completed_date|date}}</time>
-    </li>
-    {% endif %}
-    {% endfor %}
-</ul>
+    <ul class="tasklist">
+        <h3>Coming soon</h3>
+        {% for task in tasks %}
+        {% if task.coming %}
+        {% if task.completed == False %}
+        <li class="task">
+            <section class="task-wrapper">
+                <a class="task-link" href="{% url 'task-detail' task.id %}">{{task}}</a>
+                <form method="post" action="{% url 'complete' task.pk %}">
+                    {% csrf_token %}
+                    <input class="complete-btn" type="submit" value="&#10003;" />
+                </form>
+                <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+            </section>
+            <time>
+                {% if task.due_date %}
+                    due to {{task.due_date}}
+                {% else %}
+                    (no date)
+                {% endif %}
+            </time>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+    <ul class="tasklist">
+        <h3>Completed</h3>
+        {% for task in tasks %}
+        {% if task.completed %}
+        <li class="task">
+            <section class="task-wrapper">
+                <a class="task-link" href="{% url 'task-detail' task.id %}"><s>{{task}}</s></a>
+                <form method="post" action="{% url 'complete' task.pk %}">
+                    {% csrf_token %}
+                    <input class="uncomplete-btn" type="submit" value="&#10003;" />
+                </form>
+                <a class="delete-btn" href="{% url 'task-delete' task.id %}">&#215;</a>
+            </section>
+            <time>completed {{task.completed_date|date}}</time>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
 
 </main>
 

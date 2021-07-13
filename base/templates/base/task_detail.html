@@ -3,40 +3,40 @@
 
 <main class="card-container">
 
-<header>
-    <section>
-        <h1>Task detail</h1>
-        <a class="header-btn" href="{% url 'tasks' %}">Back to list</a>
-    </section>   
-</header>
+    <header>
+        <section>
+            <h1>Task detail</h1>
+            <a class="header-btn" href="{% url 'tasks' %}">Back to list</a>
+        </section>   
+    </header>
 
+    <section class="card-body">
 
-<section class="card-body">
+        <label>Title:</label>
+        <div class="text-field">{{task.title}}</div>
 
-    <label>Title:</label>
-    <div class="text-field">{{task.title}}</div>
+        <label>Due date:</label>
+        <div class="text-field date-field">{{task.due_date}}</div>
 
-    <label>Due date:</label>
-    <div class="text-field date-field">{{task.due_date}}</div>
+        <label>Description:</label>
+        <div class="text-field description-field">{{task.description}}</div>
 
-    <label>Description:</label>
-    <div class="text-field description-field">{{task.description}}</div>
+        <footer>
+            <a class="btn" href="{% url 'task-update' task.id %}">Edit</a>
+            <form method="post" action="{% url 'complete' task.pk %}">
+                {% csrf_token %}
 
-    <footer>
-        <a class="btn" href="{% url 'task-update' task.id %}">Edit</a>
-        <form method="post" action="{% url 'complete' task.pk %}">
-            {% csrf_token %}
+                {% if task.completed %}
+                <input class="uncomplete-btn" type="submit" value="&#10003;" />
+                {% else %}
+                <input class="complete-btn" type="submit" value="&#10003;" />
+                {% endif %}
 
-            {% if task.completed %}
-            <input class="uncomplete-btn" type="submit" value="&#10003;" />
-            {% else %}
-            <input class="complete-btn" type="submit" value="&#10003;" />
-            {% endif %}
-
-        </form>
-        <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
-    </footer>
-</section>
+            </form>
+            <a class="delete-btn" class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+        </footer>
+        
+    </section>
 
 </main>
 

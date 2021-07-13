@@ -3,18 +3,18 @@
 
 <main class="card-container">
 
-<header>
-    <h1>Login</h1>
-</header>
+    <header>
+        <h1>Login</h1>
+    </header>
 
-<section class="account-body">
-    <label>Don't have an account? <a class="account-btn" href="{% url 'register' %}">Register</a></label>
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input class="btn" type="submit" value="Login">
-    </form>
-</section>
+    <section class="account-body">
+        <label>Don't have an account? <a class="account-btn" href="{% url 'register' %}">Register</a></label>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn" type="submit" value="Login">
+        </form>
+    </section>
 
 </main>
 

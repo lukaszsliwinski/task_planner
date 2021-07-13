@@ -4,6 +4,7 @@ This is simply ToDo app from youtube tutorial: https://www.youtube.com/watch?v=l
 ## Requirements
 Python 3.8<br>
 Django 3.1.7<br>
+Django-sass 1.0.1<br>
 SQLite3
 
 ## Setup

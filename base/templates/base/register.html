@@ -3,37 +3,35 @@
 
 <main class="card-container">
 
-<header>
-    <h1>Register</h1>
-</header>
+    <header>
+        <h1>Register</h1>
+    </header>
 
-<section class="account-body">
-    <label>Already have an account? <a class="account-btn" href="{% url 'login' %}">Login</a></label>
-    <form method="POST">
-        {% csrf_token %}
+    <section class="account-body">
+        <label>Already have an account? <a class="account-btn" href="{% url 'login' %}">Login</a></label>
+        <form method="POST">
+            {% csrf_token %}
 
-        <label>{{form.username.label}}</label>
-        {{form.username}}
+            <label>{{form.username.label}}</label>
+            {{form.username}}
 
-        <label>{{form.password1.label}}</label>
-        {{form.password1}}
+            <label>{{form.password1.label}}</label>
+            {{form.password1}}
 
-        <label>{{form.password2.label}}</label>
-        {{form.password2}}
-        
-        <input class="btn" type="submit" value="Register">
-    </form>
-    <aside>
-        <span>Username required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
-        <span>Password can’t be too similar to your other personal information.</span>
-        <span>Password must contain at least 8 characters.</span>
-        <span>Password can’t be a commonly used password.</span>
-        <span>Password can’t be entirely numeric.</span>
-        <span>Repeat password for verification.</span>
-    </aside>
-
-    
-</section>
+            <label>{{form.password2.label}}</label>
+            {{form.password2}}
+            
+            <input class="btn" type="submit" value="Register">
+        </form>
+        <aside>
+            <span>Username required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+            <span>Password can’t be too similar to your other personal information.</span>
+            <span>Password must contain at least 8 characters.</span>
+            <span>Password can’t be a commonly used password.</span>
+            <span>Password can’t be entirely numeric.</span>
+            <span>Repeat password for verification.</span>
+        </aside>
+    </section>
 
 </main>
 

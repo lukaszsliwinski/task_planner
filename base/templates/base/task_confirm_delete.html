@@ -3,20 +3,20 @@
 
 <main class="card-container">
 
-<header>
-    <section>
-        <h1>Detele task</h1>
-        <a class="header-btn" href="{% url 'tasks' %}">Back to list</a>
-    </section>   
-</header>
+    <header>
+        <section>
+            <h1>Detele task</h1>
+            <a class="header-btn" href="{% url 'tasks' %}">Back to list</a>
+        </section>   
+    </header>
 
-<section class="card-body">
-    <form method="POST">
-        {% csrf_token %}
-        <label>Are you sure you want to delete this task? "{{task}}"</label>
-        <input class="btn" type="submit" value="Delete" />
-    </form>
-</section>
+    <section class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            <label>Are you sure you want to delete this task? "{{task}}"</label>
+            <input class="btn" type="submit" value="Delete" />
+        </form>
+    </section>
 
 </main>
 
