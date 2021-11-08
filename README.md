@@ -5,7 +5,7 @@ This is simply ToDo app based youtube tutorial: https://www.youtube.com/watch?v=
 
 ## Used technologies
 Python 3.8<br>
-Django 3.1.7<br>
+Django 3.2.3<br>
 SQLite3<br>
 HTML5<br>
 CSS3
