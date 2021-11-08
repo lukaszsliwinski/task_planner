@@ -43,6 +43,7 @@ and delete task are in task_detail.css file
 .header-btn:hover {
     background-color: transparent;
     color: white;
+    cursor: pointer;
 }
 
 
