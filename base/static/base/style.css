@@ -19,19 +19,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1, h3 {
-    font-family: 'Rubik', sans-serif;
-}
-
 h1 {
+    font-family: 'Rubik', sans-serif;
     font-size: 25px;
-}
-
-h3 {
-    padding: 10px 0 5px 0;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: underline;
 }
 
 main {

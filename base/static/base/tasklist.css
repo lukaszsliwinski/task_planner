@@ -11,6 +11,14 @@ time {
     width: 345px;
 }
 
+.tasklist-header {
+    padding: 10px 0 5px 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
 .task {
     margin: 5px;
     border: 1px solid rgb(226, 226, 226);

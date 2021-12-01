@@ -21,7 +21,7 @@
     </header>
 
     <ul class="tasklist">
-        <h3>Delayed</h3>
+        <p class="tasklist-header">Delayed</p>
         {% for task in tasks %}
         {% if task.past %}
         {% if task.completed == False %}
@@ -42,7 +42,7 @@
     </ul>
 
     <ul class="tasklist">
-        <h3>Today's</h3>
+        <p class="tasklist-header">Today's</p>
         {% for task in tasks %}
         {% if task.today %}
         {% if task.completed == False %}
@@ -63,7 +63,7 @@
     </ul>
 
     <ul class="tasklist">
-        <h3>Coming soon</h3>
+        <p class="tasklist-header">Coming soon</p>
         {% for task in tasks %}
         {% if task.coming %}
         {% if task.completed == False %}
@@ -90,7 +90,7 @@
     </ul>
 
     <ul class="tasklist">
-        <h3>Completed</h3>
+        <p class="tasklist-header">Completed</p>
         {% for task in tasks %}
         {% if task.completed %}
         <li class="task">
