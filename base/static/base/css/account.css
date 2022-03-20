@@ -5,10 +5,12 @@
 
 .account-body {
     position: relative;
-    margin: 0 auto;
-    width: 300px;
+    margin-top: 5px;
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    border-radius: 5px;
     height: auto;
-    padding: 0 20px 20px 20px;
+    padding: 0 125px 20px;
+    background-color: var(--background);
 }
 
 
@@ -16,7 +18,7 @@
 
 aside {
     margin-top: 20px;
-    border-top: 1px solid green;
+    border-top: 1px solid var(--brown1);
 }
 
 aside span {

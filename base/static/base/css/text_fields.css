@@ -7,7 +7,7 @@ input[type=text],
 input[type=password],
 textarea,
 .text-field {
-    border: 1px solid green;
+    border: 1px solid var(--brown3);
     border-radius: 5px;
     width: 95%;
     padding: 10px;

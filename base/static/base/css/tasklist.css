@@ -8,7 +8,12 @@ time {
 .tasklist {
     vertical-align: top;
     display: inline-block;
-    width: 345px;
+    margin-top: 5px;
+    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+    border-radius: 5px;
+    width: 347px;
+    min-height: 500px;
+    background-color: var(--background);
 }
 
 .tasklist-header {

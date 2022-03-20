@@ -5,17 +5,26 @@
 /* Colors */
 
 :root {
-    --green1: rgb(36, 221, 36);
-    --green2: rgb(11, 180, 11);
-    --header-background-color: linear-gradient(45deg, var(--green1) 0%, var(--green2) 50%, green 100%); 
+    --brown1: rgb(120, 0, 0);
+    --brown2: rgb(80, 0, 0);
+    --brown3: rgb(40, 0, 0);
+    --background: rgba(240, 240, 240, 0.8);
+    --header-background-color: linear-gradient(45deg, var(--brown1) 0%, var(--brown2) 50%, var(--brown3) 100%); 
 }
+
+
+/* background-color: #f0f0f0; - szary do wykorzystania */
 
 
 /* HTML tags */
 
 body {
+    box-sizing: border-box;
+    height: 100vh;
     padding-top: 50px;
-    background-color: #f0f0f0;
+    background: url(../images/background.jpg);
+    background-size: auto 100%;
+    background-position-x: center;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -26,9 +35,7 @@ h1 {
 
 main {
     margin: auto;
-    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
     border-radius: 5px 5px 0 0;
-    background-color: white;
 }
 
 label {

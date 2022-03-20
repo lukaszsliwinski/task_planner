@@ -5,17 +5,24 @@
     <head>
         <meta charset="utf-8">
         <title>Task Planner</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'base/reset.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/style.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/text_fields.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/buttons.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/header.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/tasklist.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/task_detail.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'base/account.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/reset.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/text_fields.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/buttons.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/header.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/tasklist.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/task_detail.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'base/css/account.css' %}">
+
+        <!-- React -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        
     </head>
     <body>
         {% block content %}
         {% endblock content %}
+        <!-- <script type="text/babel" src="./contact-form.js"></script> -->
     </body>
 </html>
