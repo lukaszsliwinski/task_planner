@@ -3,6 +3,9 @@
 ## About
 This is simply ToDo app based youtube tutorial: https://www.youtube.com/watch?v=llbtoQTt4qw. It was expanded to my own application to plan and manage tasks. It's made for learning Django and gain experience in web development.
 
+## Demo
+https://taskplanner.pythonanywhere.com/
+
 ## Used technologies
 Python 3.8<br>
 Django 3.2.3<br>
@@ -10,7 +13,7 @@ SQLite3<br>
 HTML5<br>
 CSS3
 
-## Setup and run (Windows)
+## Setup and run on localhost (Windows)
 1 Install Python 3.8 from website:<br>
 &emsp;https://www.python.org/downloads/release/python-380/<br>
 &emsp;Important - remember to mark "Add Python 3.8 to PATH"!<br>

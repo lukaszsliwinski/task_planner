@@ -20,7 +20,7 @@
         </nav>
     </header>
 
-    <ul class="tasklist">
+    <ul class="tasklist"></ul>
         <p class="tasklist-header">Overdue</p>
         {% for task in tasks %}
         {% if task.past %}
@@ -39,7 +39,7 @@
         {% endif %}
         {% endif %}
         {% endfor %}
-    </ul>
+    
 
     <ul class="tasklist">
         <p class="tasklist-header">Due today</p>
@@ -107,7 +107,7 @@
         {% endif %}
         {% endfor %}
     </ul>
-
+    <script type="text/babel" src="{% static 'base/js/tasklist.js' %}"></script>
 </main>
 
 {% endblock content %}
